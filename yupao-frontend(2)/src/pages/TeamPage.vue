@@ -59,6 +59,7 @@ const listTeam=async (val='',status=0 )=>{
       status,
     },
   });
+
   if(res?.code===0){
     teamList.value=res.data;
   }else {

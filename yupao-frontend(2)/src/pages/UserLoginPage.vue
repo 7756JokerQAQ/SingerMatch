@@ -19,10 +19,18 @@
     </van-cell-group>
     <div style="margin: 16px;">
       <van-button round block type="primary" native-type="submit">
-        提交
+        登录
       </van-button>
     </div>
   </van-form>
+<van-form @submit="onRegist">
+  <div style="margin: 16px;">
+    <van-button round block type="primary" native-type="submit">
+      注册
+    </van-button>
+  </div>
+</van-form>
+
 </template>
 
 <script setup lang="ts">
@@ -49,6 +57,20 @@ const onSubmit = async () => {
     window.location.href = redirectUrl;
   } else {
     Toast.fail('登录失败');
+  }
+};
+
+const onRegist=async ()=>{
+  const res = await myAxios.post('/user/register', {
+    userAccount: userAccount.value,
+    userPassword: userPassword.value,
+    checkPassword: userPassword.value
+  })
+  console.log(res, '用户注册');
+  if (res.code === 0 && res.data) {
+    Toast.success('注册成功');
+  } else {
+    Toast.fail('注册失败');
   }
 };
 

@@ -54,6 +54,18 @@ const originTagList = [{
       {text: '大6', id: '大6aaaaaaa'},
     ],
   },
+
+  {
+    text: '爱好',
+    children: [
+      {text: 'Qt', id: 'Qt'},
+      {text: 'C++', id: '大二'},
+      {text: 'Python', id: '大3'},
+      {text: 'Github', id: '大4'},
+      {text: 'Spring', id: '大5aaaaaaa'},
+      {text: 'Linux', id: '大6aaaaaaa'},
+    ],
+  },
 ]
 
 // 标签列表

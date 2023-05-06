@@ -25,7 +25,7 @@ import {ref} from "vue";
 import routes from "../config/route";
 
 const router = useRouter();
-const DEFAULT_TITLE = '伙伴匹配';
+const DEFAULT_TITLE = '歌手匹配';
 const title = ref(DEFAULT_TITLE);
 
 /**
@@ -46,6 +46,7 @@ const onClickLeft = () => {
 
 const onClickRight = () => {
   router.push('/search')
+
 };
 
 </script>

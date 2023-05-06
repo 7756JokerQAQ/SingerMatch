@@ -1,7 +1,12 @@
 import axios, {AxiosInstance} from "axios";
+import route from "../config/route";
+import {useRouter} from "vue-router";
+
+// @ts-ignore
+const isDev = process.env.NODE_ENV === 'development';
 
 const myAxios: AxiosInstance = axios.create({
-    baseURL: 'http://localhost:8080/api'
+    baseURL: isDev ? 'http://localhost:8080/api' : 'http://101.43.134.210:8080/api',
 });
 
 myAxios.defaults.withCredentials = true; // 配置为true
@@ -18,6 +23,7 @@ myAxios.interceptors.request.use(function (config) {
 
 // Add a response interceptor
 myAxios.interceptors.response.use(function (response) {
+    const router = useRouter();
     console.log('我收到你的响应啦', response)
     //未登录跳转到登录页
     if(response?.data?.code===40100){

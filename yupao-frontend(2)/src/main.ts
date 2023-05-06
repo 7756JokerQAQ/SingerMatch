@@ -5,6 +5,7 @@ import routes from "./config/route";
 import Vant from 'vant';
 import 'vant/lib/index.css';
 import '../global.css'
+import {createRouter} from "vue-router";
 const app = createApp(App);
 app.use(Vant);
 
@@ -14,5 +15,8 @@ const router = VueRouter.createRouter({
     routes, // `routes: routes` 的缩写
 })
 
+
 app.use(router);
 app.mount('#app')
+
+

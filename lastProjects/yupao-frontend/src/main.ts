@@ -15,5 +15,6 @@ const router = VueRouter.createRouter({
     routes, // `routes: routes` 的缩写
 })
 
+
 app.use(router);
 app.mount('#app')

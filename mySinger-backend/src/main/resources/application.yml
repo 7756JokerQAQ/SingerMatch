@@ -46,13 +46,3 @@ mybatis-plus:
       logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
   mapper-locations: classpath*:mapper/**/*Mapper.xml
 
-aliyun:
-  oss:
-    file:
-      endpoint: xxxx
-      keyid: xxxxx
-      keysecret: xxxx
-      bucketname: xxxx
-    config:
-      oss-switch: x
-      oss-directory: xxxx
